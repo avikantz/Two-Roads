@@ -28,7 +28,7 @@
         <!--AR-->
         <scene sceneID="hax-MU-1UU">
             <objects>
-                <viewController id="70p-VJ-87i" customClass="ARViewController" customModule="Two_Roads" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="70p-VJ-87i" customClass="CameraViewController" customModule="Two_Roads" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eob-2B-Cfd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

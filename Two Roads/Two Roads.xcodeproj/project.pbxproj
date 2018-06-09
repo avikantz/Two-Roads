@@ -17,8 +17,8 @@
 		5964034620CC009C00D2C674 /* PlacesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034520CC009C00D2C674 /* PlacesLoader.swift */; };
 		5964034820CC05C500D2C674 /* TRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034720CC05C500D2C674 /* TRTabBarController.swift */; };
 		5964034A20CC070100D2C674 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034920CC070100D2C674 /* RecommendationsViewController.swift */; };
-		5964034C20CC070700D2C674 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034B20CC070700D2C674 /* ARViewController.swift */; };
 		5964034E20CC070E00D2C674 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034D20CC070E00D2C674 /* ProfileViewController.swift */; };
+		5964035020CC082D00D2C674 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034F20CC082D00D2C674 /* CameraViewController.swift */; };
 		5964B0B320CBCF4C00F4B370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */; };
 		5964B0B520CBCF4C00F4B370 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B420CBCF4C00F4B370 /* art.scnassets */; };
 		5964B0BA20CBCF4C00F4B370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B820CBCF4C00F4B370 /* Main.storyboard */; };
@@ -59,8 +59,8 @@
 		5964034520CC009C00D2C674 /* PlacesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesLoader.swift; sourceTree = "<group>"; };
 		5964034720CC05C500D2C674 /* TRTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRTabBarController.swift; sourceTree = "<group>"; };
 		5964034920CC070100D2C674 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
-		5964034B20CC070700D2C674 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		5964034D20CC070E00D2C674 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5964034F20CC082D00D2C674 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5964B0AF20CBCF4C00F4B370 /* Two Roads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Two Roads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5964B0B420CBCF4C00F4B370 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				5964034720CC05C500D2C674 /* TRTabBarController.swift */,
 				5964033B20CBF27700D2C674 /* HomeViewController.swift */,
 				5964034920CC070100D2C674 /* RecommendationsViewController.swift */,
-				5964034B20CC070700D2C674 /* ARViewController.swift */,
+				5964034F20CC082D00D2C674 /* CameraViewController.swift */,
 				5964034D20CC070E00D2C674 /* ProfileViewController.swift */,
 				5964033D20CBFC4D00D2C674 /* Place.swift */,
 				5964034320CC002B00D2C674 /* PlaceAnnotation.swift */,
@@ -430,10 +430,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5964034620CC009C00D2C674 /* PlacesLoader.swift in Sources */,
+				5964035020CC082D00D2C674 /* CameraViewController.swift in Sources */,
 				5964B0B320CBCF4C00F4B370 /* AppDelegate.swift in Sources */,
 				5964034E20CC070E00D2C674 /* ProfileViewController.swift in Sources */,
 				5964034020CBFD5900D2C674 /* AnnotationView.swift in Sources */,
-				5964034C20CC070700D2C674 /* ARViewController.swift in Sources */,
 				5964033C20CBF27700D2C674 /* HomeViewController.swift in Sources */,
 				5964034420CC002B00D2C674 /* PlaceAnnotation.swift in Sources */,
 				5964034A20CC070100D2C674 /* RecommendationsViewController.swift in Sources */,
