@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		377A5C187438515D49907120 /* Pods_Two_RoadsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784F8DFFC2474F0D7AC27EFC /* Pods_Two_RoadsUITests.framework */; };
+		481B3FE86066CF0803714C7C /* Pods_Two_RoadsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AE0D7ACD857EE5BED08707 /* Pods_Two_RoadsTests.framework */; };
+		5964033C20CBF27700D2C674 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964033B20CBF27700D2C674 /* HomeViewController.swift */; };
+		5964033E20CBFC4D00D2C674 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964033D20CBFC4D00D2C674 /* Place.swift */; };
+		5964034020CBFD5900D2C674 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964033F20CBFD5900D2C674 /* AnnotationView.swift */; };
+		5964034220CBFD9A00D2C674 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964034120CBFD9A00D2C674 /* AnnotationView.xib */; };
+		5964034420CC002B00D2C674 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034320CC002B00D2C674 /* PlaceAnnotation.swift */; };
+		5964034620CC009C00D2C674 /* PlacesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034520CC009C00D2C674 /* PlacesLoader.swift */; };
+		5964034820CC05C500D2C674 /* TRTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034720CC05C500D2C674 /* TRTabBarController.swift */; };
+		5964034A20CC070100D2C674 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034920CC070100D2C674 /* RecommendationsViewController.swift */; };
+		5964034C20CC070700D2C674 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034B20CC070700D2C674 /* ARViewController.swift */; };
+		5964034E20CC070E00D2C674 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964034D20CC070E00D2C674 /* ProfileViewController.swift */; };
+		5964B0B320CBCF4C00F4B370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */; };
+		5964B0B520CBCF4C00F4B370 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B420CBCF4C00F4B370 /* art.scnassets */; };
+		5964B0BA20CBCF4C00F4B370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B820CBCF4C00F4B370 /* Main.storyboard */; };
+		5964B0BC20CBCF4D00F4B370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0BB20CBCF4D00F4B370 /* Assets.xcassets */; };
+		5964B0BF20CBCF4D00F4B370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0BD20CBCF4D00F4B370 /* LaunchScreen.storyboard */; };
+		5964B0CA20CBCF4D00F4B370 /* Two_RoadsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964B0C920CBCF4D00F4B370 /* Two_RoadsTests.swift */; };
+		5964B0D520CBCF4D00F4B370 /* Two_RoadsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964B0D420CBCF4D00F4B370 /* Two_RoadsUITests.swift */; };
+		9C62253F3D6B5C3FECB08CA7 /* Pods_Two_Roads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D181DCADECA61D1FA41A8E53 /* Pods_Two_Roads.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5964B0C620CBCF4D00F4B370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5964B0A720CBCF4B00F4B370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5964B0AE20CBCF4C00F4B370;
+			remoteInfo = "Two Roads";
+		};
+		5964B0D120CBCF4D00F4B370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5964B0A720CBCF4B00F4B370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5964B0AE20CBCF4C00F4B370;
+			remoteInfo = "Two Roads";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0732F121F8A18F9354CD3533 /* Pods-Two Roads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Roads.release.xcconfig"; path = "Pods/Target Support Files/Pods-Two Roads/Pods-Two Roads.release.xcconfig"; sourceTree = "<group>"; };
+		25AE0D7ACD857EE5BED08707 /* Pods_Two_RoadsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_RoadsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A6C4F5F18AAB9F58830AD0 /* Pods-Two Roads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two Roads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two Roads/Pods-Two Roads.debug.xcconfig"; sourceTree = "<group>"; };
+		5964033A20CBEFA000D2C674 /* Two Roads.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Two Roads.entitlements"; sourceTree = "<group>"; };
+		5964033B20CBF27700D2C674 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5964033D20CBFC4D00D2C674 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		5964033F20CBFD5900D2C674 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		5964034120CBFD9A00D2C674 /* AnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
+		5964034320CC002B00D2C674 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		5964034520CC009C00D2C674 /* PlacesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesLoader.swift; sourceTree = "<group>"; };
+		5964034720CC05C500D2C674 /* TRTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRTabBarController.swift; sourceTree = "<group>"; };
+		5964034920CC070100D2C674 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
+		5964034B20CC070700D2C674 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		5964034D20CC070E00D2C674 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5964B0AF20CBCF4C00F4B370 /* Two Roads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Two Roads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5964B0B420CBCF4C00F4B370 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		5964B0B920CBCF4C00F4B370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5964B0BB20CBCF4D00F4B370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5964B0BE20CBCF4D00F4B370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5964B0C020CBCF4D00F4B370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5964B0C520CBCF4D00F4B370 /* Two RoadsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Two RoadsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5964B0C920CBCF4D00F4B370 /* Two_RoadsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Two_RoadsTests.swift; sourceTree = "<group>"; };
+		5964B0CB20CBCF4D00F4B370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5964B0D020CBCF4D00F4B370 /* Two RoadsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Two RoadsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5964B0D420CBCF4D00F4B370 /* Two_RoadsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Two_RoadsUITests.swift; sourceTree = "<group>"; };
+		5964B0D620CBCF4D00F4B370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784F8DFFC2474F0D7AC27EFC /* Pods_Two_RoadsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_RoadsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D5F1C4F04F55221B78F058 /* Pods-Two RoadsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two RoadsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Two RoadsUITests/Pods-Two RoadsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA21DFA779DF99F33EEAF7A2 /* Pods-Two RoadsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two RoadsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two RoadsUITests/Pods-Two RoadsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D181DCADECA61D1FA41A8E53 /* Pods_Two_Roads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Two_Roads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE22DDE7E6E0775DE191898D /* Pods-Two RoadsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two RoadsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Two RoadsTests/Pods-Two RoadsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FBEDE73024EA4F95A24AE5AF /* Pods-Two RoadsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Two RoadsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Two RoadsTests/Pods-Two RoadsTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5964B0AC20CBCF4C00F4B370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C62253F3D6B5C3FECB08CA7 /* Pods_Two_Roads.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0C220CBCF4D00F4B370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481B3FE86066CF0803714C7C /* Pods_Two_RoadsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0CD20CBCF4D00F4B370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A5C187438515D49907120 /* Pods_Two_RoadsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5964B0A620CBCF4B00F4B370 = {
+			isa = PBXGroup;
+			children = (
+				5964B0B120CBCF4C00F4B370 /* Two Roads */,
+				5964B0C820CBCF4D00F4B370 /* Two RoadsTests */,
+				5964B0D320CBCF4D00F4B370 /* Two RoadsUITests */,
+				5964B0B020CBCF4C00F4B370 /* Products */,
+				FC665D7D7D23EC10C6AAFDBF /* Pods */,
+				F0D8B7F96630E37D2C81D8B8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5964B0B020CBCF4C00F4B370 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5964B0AF20CBCF4C00F4B370 /* Two Roads.app */,
+				5964B0C520CBCF4D00F4B370 /* Two RoadsTests.xctest */,
+				5964B0D020CBCF4D00F4B370 /* Two RoadsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5964B0B120CBCF4C00F4B370 /* Two Roads */ = {
+			isa = PBXGroup;
+			children = (
+				5964033A20CBEFA000D2C674 /* Two Roads.entitlements */,
+				5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */,
+				5964B0B420CBCF4C00F4B370 /* art.scnassets */,
+				5964B0B820CBCF4C00F4B370 /* Main.storyboard */,
+				5964034720CC05C500D2C674 /* TRTabBarController.swift */,
+				5964033B20CBF27700D2C674 /* HomeViewController.swift */,
+				5964034920CC070100D2C674 /* RecommendationsViewController.swift */,
+				5964034B20CC070700D2C674 /* ARViewController.swift */,
+				5964034D20CC070E00D2C674 /* ProfileViewController.swift */,
+				5964033D20CBFC4D00D2C674 /* Place.swift */,
+				5964034320CC002B00D2C674 /* PlaceAnnotation.swift */,
+				5964034520CC009C00D2C674 /* PlacesLoader.swift */,
+				5964033F20CBFD5900D2C674 /* AnnotationView.swift */,
+				5964034120CBFD9A00D2C674 /* AnnotationView.xib */,
+				5964B0BB20CBCF4D00F4B370 /* Assets.xcassets */,
+				5964B0BD20CBCF4D00F4B370 /* LaunchScreen.storyboard */,
+				5964B0C020CBCF4D00F4B370 /* Info.plist */,
+			);
+			path = "Two Roads";
+			sourceTree = "<group>";
+		};
+		5964B0C820CBCF4D00F4B370 /* Two RoadsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5964B0C920CBCF4D00F4B370 /* Two_RoadsTests.swift */,
+				5964B0CB20CBCF4D00F4B370 /* Info.plist */,
+			);
+			path = "Two RoadsTests";
+			sourceTree = "<group>";
+		};
+		5964B0D320CBCF4D00F4B370 /* Two RoadsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5964B0D420CBCF4D00F4B370 /* Two_RoadsUITests.swift */,
+				5964B0D620CBCF4D00F4B370 /* Info.plist */,
+			);
+			path = "Two RoadsUITests";
+			sourceTree = "<group>";
+		};
+		F0D8B7F96630E37D2C81D8B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D181DCADECA61D1FA41A8E53 /* Pods_Two_Roads.framework */,
+				25AE0D7ACD857EE5BED08707 /* Pods_Two_RoadsTests.framework */,
+				784F8DFFC2474F0D7AC27EFC /* Pods_Two_RoadsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC665D7D7D23EC10C6AAFDBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36A6C4F5F18AAB9F58830AD0 /* Pods-Two Roads.debug.xcconfig */,
+				0732F121F8A18F9354CD3533 /* Pods-Two Roads.release.xcconfig */,
+				EE22DDE7E6E0775DE191898D /* Pods-Two RoadsTests.debug.xcconfig */,
+				FBEDE73024EA4F95A24AE5AF /* Pods-Two RoadsTests.release.xcconfig */,
+				CA21DFA779DF99F33EEAF7A2 /* Pods-Two RoadsUITests.debug.xcconfig */,
+				B2D5F1C4F04F55221B78F058 /* Pods-Two RoadsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5964B0AE20CBCF4C00F4B370 /* Two Roads */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5964B0D920CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two Roads" */;
+			buildPhases = (
+				6B3905D155A5CDA0B0522637 /* [CP] Check Pods Manifest.lock */,
+				5964B0AB20CBCF4C00F4B370 /* Sources */,
+				5964B0AC20CBCF4C00F4B370 /* Frameworks */,
+				5964B0AD20CBCF4C00F4B370 /* Resources */,
+				D5FC3A7E64418F1EA8C29D35 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Two Roads";
+			productName = "Two Roads";
+			productReference = 5964B0AF20CBCF4C00F4B370 /* Two Roads.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5964B0C420CBCF4D00F4B370 /* Two RoadsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5964B0DC20CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two RoadsTests" */;
+			buildPhases = (
+				0E5FCF14C62B00D21E2D31BB /* [CP] Check Pods Manifest.lock */,
+				5964B0C120CBCF4D00F4B370 /* Sources */,
+				5964B0C220CBCF4D00F4B370 /* Frameworks */,
+				5964B0C320CBCF4D00F4B370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5964B0C720CBCF4D00F4B370 /* PBXTargetDependency */,
+			);
+			name = "Two RoadsTests";
+			productName = "Two RoadsTests";
+			productReference = 5964B0C520CBCF4D00F4B370 /* Two RoadsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5964B0CF20CBCF4D00F4B370 /* Two RoadsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5964B0DF20CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two RoadsUITests" */;
+			buildPhases = (
+				CEE2040995250C766CF6148D /* [CP] Check Pods Manifest.lock */,
+				5964B0CC20CBCF4D00F4B370 /* Sources */,
+				5964B0CD20CBCF4D00F4B370 /* Frameworks */,
+				5964B0CE20CBCF4D00F4B370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5964B0D220CBCF4D00F4B370 /* PBXTargetDependency */,
+			);
+			name = "Two RoadsUITests";
+			productName = "Two RoadsUITests";
+			productReference = 5964B0D020CBCF4D00F4B370 /* Two RoadsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5964B0A720CBCF4B00F4B370 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = tomato;
+				TargetAttributes = {
+					5964B0AE20CBCF4C00F4B370 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					5964B0C420CBCF4D00F4B370 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5964B0AE20CBCF4C00F4B370;
+					};
+					5964B0CF20CBCF4D00F4B370 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 5964B0AE20CBCF4C00F4B370;
+					};
+				};
+			};
+			buildConfigurationList = 5964B0AA20CBCF4B00F4B370 /* Build configuration list for PBXProject "Two Roads" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5964B0A620CBCF4B00F4B370;
+			productRefGroup = 5964B0B020CBCF4C00F4B370 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5964B0AE20CBCF4C00F4B370 /* Two Roads */,
+				5964B0C420CBCF4D00F4B370 /* Two RoadsTests */,
+				5964B0CF20CBCF4D00F4B370 /* Two RoadsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5964B0AD20CBCF4C00F4B370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964B0B520CBCF4C00F4B370 /* art.scnassets in Resources */,
+				5964034220CBFD9A00D2C674 /* AnnotationView.xib in Resources */,
+				5964B0BF20CBCF4D00F4B370 /* LaunchScreen.storyboard in Resources */,
+				5964B0BC20CBCF4D00F4B370 /* Assets.xcassets in Resources */,
+				5964B0BA20CBCF4C00F4B370 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0C320CBCF4D00F4B370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0CE20CBCF4D00F4B370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E5FCF14C62B00D21E2D31BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Two RoadsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B3905D155A5CDA0B0522637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Two Roads-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE2040995250C766CF6148D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Two RoadsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5FC3A7E64418F1EA8C29D35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Two Roads/Pods-Two Roads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/GzipSwift/Gzip.framework",
+				"${BUILT_PRODUCTS_DIR}/HDAugmentedReality/HDAugmentedReality.framework",
+				"${BUILT_PRODUCTS_DIR}/HyperTrack/HyperTrack.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gzip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDAugmentedReality.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperTrack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeableTabBarController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Two Roads/Pods-Two Roads-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5964B0AB20CBCF4C00F4B370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964034620CC009C00D2C674 /* PlacesLoader.swift in Sources */,
+				5964B0B320CBCF4C00F4B370 /* AppDelegate.swift in Sources */,
+				5964034E20CC070E00D2C674 /* ProfileViewController.swift in Sources */,
+				5964034020CBFD5900D2C674 /* AnnotationView.swift in Sources */,
+				5964034C20CC070700D2C674 /* ARViewController.swift in Sources */,
+				5964033C20CBF27700D2C674 /* HomeViewController.swift in Sources */,
+				5964034420CC002B00D2C674 /* PlaceAnnotation.swift in Sources */,
+				5964034A20CC070100D2C674 /* RecommendationsViewController.swift in Sources */,
+				5964034820CC05C500D2C674 /* TRTabBarController.swift in Sources */,
+				5964033E20CBFC4D00D2C674 /* Place.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0C120CBCF4D00F4B370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964B0CA20CBCF4D00F4B370 /* Two_RoadsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5964B0CC20CBCF4D00F4B370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5964B0D520CBCF4D00F4B370 /* Two_RoadsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5964B0C720CBCF4D00F4B370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5964B0AE20CBCF4C00F4B370 /* Two Roads */;
+			targetProxy = 5964B0C620CBCF4D00F4B370 /* PBXContainerItemProxy */;
+		};
+		5964B0D220CBCF4D00F4B370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5964B0AE20CBCF4C00F4B370 /* Two Roads */;
+			targetProxy = 5964B0D120CBCF4D00F4B370 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5964B0B820CBCF4C00F4B370 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5964B0B920CBCF4C00F4B370 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5964B0BD20CBCF4D00F4B370 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5964B0BE20CBCF4D00F4B370 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5964B0D720CBCF4D00F4B370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5964B0D820CBCF4D00F4B370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5964B0DA20CBCF4D00F4B370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36A6C4F5F18AAB9F58830AD0 /* Pods-Two Roads.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Two Roads/Two Roads.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HN3SCP8A52;
+				INFOPLIST_FILE = "Two Roads/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Two-Roads";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5964B0DB20CBCF4D00F4B370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0732F121F8A18F9354CD3533 /* Pods-Two Roads.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Two Roads/Two Roads.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HN3SCP8A52;
+				INFOPLIST_FILE = "Two Roads/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Two-Roads";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5964B0DD20CBCF4D00F4B370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE22DDE7E6E0775DE191898D /* Pods-Two RoadsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L878YT2752;
+				INFOPLIST_FILE = "Two RoadsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomato.Two-RoadsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Two Roads.app/Two Roads";
+			};
+			name = Debug;
+		};
+		5964B0DE20CBCF4D00F4B370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBEDE73024EA4F95A24AE5AF /* Pods-Two RoadsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L878YT2752;
+				INFOPLIST_FILE = "Two RoadsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomato.Two-RoadsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Two Roads.app/Two Roads";
+			};
+			name = Release;
+		};
+		5964B0E020CBCF4D00F4B370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA21DFA779DF99F33EEAF7A2 /* Pods-Two RoadsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L878YT2752;
+				INFOPLIST_FILE = "Two RoadsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomato.Two-RoadsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Two Roads";
+			};
+			name = Debug;
+		};
+		5964B0E120CBCF4D00F4B370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D5F1C4F04F55221B78F058 /* Pods-Two RoadsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L878YT2752;
+				INFOPLIST_FILE = "Two RoadsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tomato.Two-RoadsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Two Roads";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5964B0AA20CBCF4B00F4B370 /* Build configuration list for PBXProject "Two Roads" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5964B0D720CBCF4D00F4B370 /* Debug */,
+				5964B0D820CBCF4D00F4B370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5964B0D920CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two Roads" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5964B0DA20CBCF4D00F4B370 /* Debug */,
+				5964B0DB20CBCF4D00F4B370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5964B0DC20CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two RoadsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5964B0DD20CBCF4D00F4B370 /* Debug */,
+				5964B0DE20CBCF4D00F4B370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5964B0DF20CBCF4D00F4B370 /* Build configuration list for PBXNativeTarget "Two RoadsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5964B0E020CBCF4D00F4B370 /* Debug */,
+				5964B0E120CBCF4D00F4B370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5964B0A720CBCF4B00F4B370 /* Project object */;
+}

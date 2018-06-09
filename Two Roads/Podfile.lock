@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (4.7.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Swift (3.4.2):
+    - CocoaLumberjack/Default
+  - GzipSwift (4.0.4)
+  - HDAugmentedReality (2.3.0)
+  - HyperTrack (0.7.21):
+    - Alamofire (>= 4.4.0)
+    - CocoaLumberjack/Swift
+    - GzipSwift
+    - SQLite.swift (= 0.11.4)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
+  - SwipeableTabBarController (1.2.1)
+
+DEPENDENCIES:
+  - HDAugmentedReality (~> 2.3)
+  - HyperTrack (~> 0.7.21)
+  - SwipeableTabBarController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CocoaLumberjack
+    - GzipSwift
+    - HDAugmentedReality
+    - HyperTrack
+    - SQLite.swift
+    - SwipeableTabBarController
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  GzipSwift: 1a5bc5f7827e09846b0635b5079f1224bc3b1c3a
+  HDAugmentedReality: 2ea96cb488aa81298e6557a897b4252d62e55843
+  HyperTrack: e47ea851098db84fc81714a597430b8e5b251ba1
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
+  SwipeableTabBarController: 975a6cb090a2eef4c676697731f5c6cbc831009e
+
+PODFILE CHECKSUM: ae761533e1819bdfc1e0e0c114f08c90d113a3e3
+
+COCOAPODS: 1.5.3

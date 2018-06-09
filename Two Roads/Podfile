@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'Two Roads' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'HyperTrack', '~> 0.7.21'
+  pod 'HDAugmentedReality', '~> 2.3'
+  pod 'SwipeableTabBarController'
+
+  swift3Targets = ['HyperTrack']
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+          if swift3Targets.include? target.name
+            config.build_settings['SWIFT_VERSION'] = '3.4'
+          else
+            config.build_settings['SWIFT_VERSION'] = '4.1'
+          end
+        end
+    end
+end
+
+  # Pods for Two Roads
+
+  target 'Two RoadsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Two RoadsUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
