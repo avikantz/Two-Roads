@@ -20,7 +20,7 @@ class RecommendationsViewController: UIViewController {
 	fileprivate var currentLocation = CLLocation(latitude: 12, longitude: 77)
 	fileprivate var loadedPOIs: Bool = false
 	
-	fileprivate var categories = ["cafe", "restaurant", "pub"] // Default
+	fileprivate var categories = ["mall", "park", "restaurant"] // Default
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -45,7 +45,7 @@ class RecommendationsViewController: UIViewController {
 			locationManager.startUpdatingLocation()
 		}
 
-		DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
 			URLSession.shared.dataTask(with: URL(string: baseURL + "recommend")!) { (data, response, error) in
 				do {
 					if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
@@ -199,7 +199,7 @@ extension RecommendationsViewController: CLLocationManagerDelegate {
 								for t in types {
 									type += t + " "
 								}
-								let address = placeDict.object(forKey: "vicinity") as! String
+								let address = placeDict.object(forKey: "vicinity") as? String ?? placeDict.object(forKey: "formatted_address") as? String ?? ""
 								
 								let location = CLLocation(latitude: latitude, longitude: longitude)
 								if let place = Place(location: location, reference: reference, name: name, address: address, types: type) {
