@@ -7,15 +7,47 @@
 //
 
 import UIKit
+import CoreLocation
+
+let bgImages = ["cafe", "night_club", "park", "restaurant", "shopping_mall", "establishment", "outdoors"]
 
 class RecommendationsViewController: UIViewController {
-
+	
+	fileprivate var places = [Place]()
+	fileprivate let locationManager = CLLocationManager()
+	fileprivate var loadedPOIs: Bool = false
+	
+	@IBOutlet weak var tableView: UITableView!
+	
+	@IBOutlet weak var collectionView: UICollectionView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		
+		locationManager.delegate = self
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.requestWhenInUseAuthorization()
+		
+		tableView.register(UINib.init(nibName: "RecommendationsTableViewCell", bundle: nil), forCellReuseIdentifier: "recommendationsCell")
+		tableView.contentInset.bottom = 49
+		
+		collectionView.register(UINib(nibName: "RecommendationCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "headlineCell")
+		collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
+		
+		if (places.count == 0) {
+			locationManager.startUpdatingLocation()
+		}
+		
     }
-    
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		if let tabBarController = self.tabBarController as? TRTabBarController {
+			tabBarController.selectTabAtIndex(index: 0)
+		}
+	}
 
     /*
     // MARK: - Navigation
@@ -27,4 +59,146 @@ class RecommendationsViewController: UIViewController {
     }
     */
 
+}
+
+extension RecommendationsViewController: UITableViewDataSource {
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return places.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "recommendationsCell", for: indexPath) as! RecommendationsTableViewCell
+		let place = places[indexPath.row]
+		cell.titleLabel.text = place.placeName
+		cell.categoryLabel.text = place.infoText
+		cell.distanceLabel.text = String(format: "%.0f m", place.distanceFromUser)
+		cell.tagsLabel.text = place.types
+		for image in bgImages {
+			if (place.types!.contains(image)) {
+				cell.backgroundImageView.image = UIImage(named: image)
+				break
+			}
+		}
+		return cell
+	}
+	
+}
+
+extension RecommendationsViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		return false
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 144
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		// Do something...
+		// Open the AR view with information of the cell
+	}
+	
+}
+
+extension RecommendationsViewController: UICollectionViewDataSource {
+	
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return 1
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return max(min(3, places.count), 0)
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "headlineCell", for: indexPath) as! RecommendationCollectionViewCell
+		let place = places[indexPath.row]
+		cell.titleLabel.text = place.placeName
+		for image in bgImages {
+			if (place.types!.contains(image)) {
+				cell.imageView.image = UIImage(named: image)
+				break
+			}
+		}
+		return cell
+	}
+	
+}
+
+extension RecommendationsViewController: UICollectionViewDelegate {
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		print("Cell selected")
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		if kind == UICollectionElementKindSectionHeader {
+			let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath)
+			return headerView
+		}
+		return UICollectionReusableView()
+	}
+	
+}
+
+extension RecommendationsViewController: CLLocationManagerDelegate {
+	
+	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+		return true
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		
+		if locations.count > 0 {
+			let location = locations.last!
+			if location.horizontalAccuracy < 100 {
+				manager.stopUpdatingLocation()
+				//				let span = MKCoordinateSpan(latitudeDelta: 0.014, longitudeDelta: 0.014)
+				//				let region = MKCoordinateRegion(center: location.coordinate, span: span)
+				//				mapView.region = region
+				
+				if !loadedPOIs {
+					loadedPOIs = true
+					let loader = PlacesLoader()
+					loader.loadPOIS(location: location, radius: 1000) { placesDict, error in
+						if let dict = placesDict {
+							guard let placesArray = dict.object(forKey: "results") as? [NSDictionary]  else { return }
+							
+							for placeDict in placesArray {
+								let latitude = placeDict.value(forKeyPath: "geometry.location.lat") as! CLLocationDegrees
+								let longitude = placeDict.value(forKeyPath: "geometry.location.lng") as! CLLocationDegrees
+								let reference = placeDict.object(forKey: "reference") as! String
+								let name = placeDict.object(forKey: "name") as! String
+								let types = placeDict.object(forKey: "types") as! [String]
+								var type = ""
+								for t in types {
+									type += t + " "
+								}
+								let address = placeDict.object(forKey: "vicinity") as! String
+								
+								let location = CLLocation(latitude: latitude, longitude: longitude)
+								if let place = Place(location: location, reference: reference, name: name, address: address, types: type) {
+									self.places.append(place)
+//									let annotation = PlaceAnnotation(location: place.location.coordinate, title: place.placeName)
+//									DispatchQueue.main.async {
+//										self.mapView.addAnnotation(annotation)
+//									}
+								}
+							}
+							DispatchQueue.main.async {
+								self.tableView.reloadData()
+								self.collectionView.reloadData()
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

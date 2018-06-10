@@ -18,42 +18,61 @@ class CameraViewController: UIViewController {
 	fileprivate var arController: ARViewController!
 	
 	fileprivate var loadedPOIs: Bool = false
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
-		locationManager.startUpdatingLocation()
 		locationManager.requestWhenInUseAuthorization()
 		
 		arController = ARViewController()
 		
 		arController.dataSource = self
 
-//		arController.maxVisibleAnnotations = 45
-//		arController.maxVerticalLevel = 5
-//		arController.headingSmoothingFactor = 0.05
 		
 		arController.trackingManager.userDistanceFilter = 25
 		arController.trackingManager.reloadDistanceFilter = 75
+		arController.trackingManager.pitchFilterFactor = 0.5
+		
+		arController.presenter.maxDistance = 3000               // Don't show annotations if they are farther than this
+		arController.presenter.maxVisibleAnnotations = 30
+		arController.presenter.distanceOffsetMultiplier = 0.8
+		arController.presenter.distanceOffsetMinThreshold = 500
+		arController.presenter.bottomBorder = 0.4
+		arController.presenter.presenterTransform = ARPresenterStackTransform.init()
 		
 		arController.uiOptions.closeButtonEnabled = false
 		
+		if (places.count == 0) {
+			locationManager.startUpdatingLocation()
+		}
+		
     }
 	
-	override func viewDidAppear(_ animated: Bool) {
-//		self.present(arController, animated: false) {
-//			self.tabBarController?.selectedIndex = 0
-//		}
-	}
+//	override func viewDidAppear(_ animated: Bool) {
+////		self.present(arController, animated: false) {
+////			self.tabBarController?.selectedIndex = 0
+////		}
+//		self.tabBarController?.tabBar.isHidden = true
+//	}
+//	
+//	override func viewWillDisappear(_ animated: Bool) {
+//		self.tabBarController?.tabBar.isHidden = false
+//	}
 	
 	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		self.addChildViewController(arController)
-		self.view.addSubview(arController.view)
+		self.view.insertSubview(arController.view, at: 0)
+		if let tabBarController = self.tabBarController as? TRTabBarController {
+			tabBarController.selectTabAtIndex(index: 1)
+		}
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
 		arController.view.removeFromSuperview()
 		arController.removeFromParentViewController()
 	}
@@ -64,7 +83,22 @@ class CameraViewController: UIViewController {
 		
 		arController.present(alert, animated: true, completion: nil)
 	}
-
+	
+	// -----
+	
+	@IBAction func leftAction(_ sender: Any) {
+		self.tabBarController?.selectedIndex = 0
+	}
+	
+	@IBAction func rightAction(_ sender: Any) {
+		self.tabBarController?.selectedIndex = 2
+	}
+	
+	@IBAction func centerAction(_ sender: Any) {
+		// Do something...
+	}
+	
+	
     /*
     // MARK: - Navigation
 
@@ -105,10 +139,15 @@ extension CameraViewController: CLLocationManagerDelegate {
 								let longitude = placeDict.value(forKeyPath: "geometry.location.lng") as! CLLocationDegrees
 								let reference = placeDict.object(forKey: "reference") as! String
 								let name = placeDict.object(forKey: "name") as! String
+								let types = placeDict.object(forKey: "types") as! [String]
+								var type = ""
+								for t in types {
+									type += t + " "
+								}
 								let address = placeDict.object(forKey: "vicinity") as! String
 								
 								let location = CLLocation(latitude: latitude, longitude: longitude)
-								if let place = Place(location: location, reference: reference, name: name, address: address) {
+								if let place = Place(location: location, reference: reference, name: name, address: address, types: type) {
 									self.places.append(place)
 //									let annotation = PlaceAnnotation(location: place.location.coordinate, title: place.placeName)
 //									DispatchQueue.main.async {
@@ -119,6 +158,12 @@ extension CameraViewController: CLLocationManagerDelegate {
 							DispatchQueue.main.async {
 								self.arController.setAnnotations(self.places)
 							}
+							DispatchQueue.main.asyncAfter(deadline: .now() + 60, execute: {
+								print("Updating locations")
+								self.loadedPOIs = false
+								self.places = []
+								self.locationManager.startUpdatingLocation()
+							})
 						}
 					}
 				}
@@ -132,7 +177,7 @@ extension CameraViewController: ARDataSource {
 		let annotationView = Bundle.main.loadNibNamed("AnnotationView", owner: nil, options: nil)?.first as! AnnotationView
 		annotationView.annotation = viewForAnnotation
 		annotationView.delegate = self
-		annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+		annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
 		
 		return annotationView
 	}

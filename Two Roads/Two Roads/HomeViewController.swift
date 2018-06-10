@@ -39,12 +39,57 @@ class HomeViewController: UIViewController {
 
 	func loginSuccess() {
 		// Start tracking data
+		
 		print("Logged in successfully, tracking data...")
 		if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") {
 			self.present(tabBarVC, animated: false) {
 				print("Presenting tab bar...")
 			}
 		}
+		
+		activityIt()
+	}
+	
+	func activityIt() {
+		
+		let actionId = UUID.init().uuidString
+		
+		HyperTrack.resumeTracking()
+		let actionParams = HTActionParams()
+			.setType(type: "visit")
+			.setUniqueId(uniqueId: actionId)
+		
+		HyperTrack.createAction(actionParams) { action, error in
+			if let error = error {
+				// Handle createAction API error here
+				print("Error in creating action")
+				print(error.debugDescription)
+				return
+			}
+			
+			if let action = action {
+				// Handle createAction API success here
+				print("Action created successfully")
+				print(action.description)
+			}
+		}
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 60) {
+			HyperTrack.completeActionInSync(actionId) { (action, error) in
+				if let _ = error {
+					// Handle completeActionInSynch API error here
+					print("Action could not be completed")
+					return;
+				}
+				
+				if let _ = action {
+					// Handle completeActionInSynch API success here
+					print("Action seems to be completed")
+				}
+			}
+			self.activityIt()
+		}
+		
 	}
 
     /*

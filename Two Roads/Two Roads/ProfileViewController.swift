@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		if let tabBarController = self.tabBarController as? TRTabBarController {
+			tabBarController.selectTabAtIndex(index: 2)
+		}
+	}
 
     /*
     // MARK: - Navigation
