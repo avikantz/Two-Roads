@@ -20,6 +20,8 @@ class AnnotationView: ARAnnotationView {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var infoLabel: UILabel!
 	
+	var bigImage: Bool = false
+	
 	var delegate: AnnotationViewDelegate?
 	
 	override func didMoveToSuperview() {
@@ -32,6 +34,19 @@ class AnnotationView: ARAnnotationView {
 		if let annotation = annotation as? Place {
 			titleLabel.text = annotation.placeName
 			infoLabel.text = String(format: "%.0f m", annotation.distanceFromUser)
+			if (annotation.distanceFromUser < 100.0) {
+				imageView.image = UIImage(named: "loc3")
+			} else if (annotation.distanceFromUser < 400.0) {
+				imageView.image = UIImage(named: "loc2")
+				self.alpha = 0.7
+			} else {
+				imageView.image = UIImage(named: "loc")
+				self.alpha = 0.4
+			}
+			if (bigImage) {
+				imageView.image = UIImage(named: "loclarge")
+				self.alpha = 1
+			}
 		}
 	}
 

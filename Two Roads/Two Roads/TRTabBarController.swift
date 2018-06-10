@@ -46,6 +46,13 @@ class TRTabBarController: SwipeableTabBarController {
 		}
 	}
 	
+	func setSinglePlace(place: Place) {
+		if let cameraVC = self.viewControllers?[1] as? CameraViewController {
+			cameraVC.singlePlace = place
+		}
+		self.selectedIndex = 1
+	}
+	
 //	override func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 //		let index = tabBarController.viewControllers?.firstIndex(of: viewController)
 //		let buttons = [discoverButton, arButton, profileButton]

@@ -22,7 +22,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night_club" translatesAutoresizingMaskIntoConstraints="NO" id="lEA-P6-jsW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                     </imageView>
-                    <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Qt-iM4">
+                    <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INr-Qt-iM4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LgV-NR-NTD">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>

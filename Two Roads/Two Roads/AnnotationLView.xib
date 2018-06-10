@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,16 +11,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AnnotationView" customModule="Two_Roads" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AnnotationView" customModule="Two_Roads">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qr7-PE-WRh">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loc" translatesAutoresizingMaskIntoConstraints="NO" id="Ou4-C4-kZd">
-                            <rect key="frame" x="0.0" y="40" width="200" height="60"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loclarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ou4-C4-kZd">
+                            <rect key="frame" x="0.0" y="40" width="200" height="200"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="8DN-fT-NCE"/>
+                            </constraints>
                         </imageView>
                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-u6-VOQ">
                             <rect key="frame" x="59" y="0.0" width="82" height="40"/>
@@ -89,10 +91,10 @@
                 <outlet property="infoLabel" destination="7Xo-54-hcX" id="QkJ-DN-9ie"/>
                 <outlet property="titleLabel" destination="yJp-Hz-9PN" id="XUt-D3-DVE"/>
             </connections>
-            <point key="canvasLocation" x="34" y="91"/>
+            <point key="canvasLocation" x="34" y="130"/>
         </view>
     </objects>
     <resources>
-        <image name="loc" width="31" height="60"/>
+        <image name="loclarge" width="443" height="848"/>
     </resources>
 </document>

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>HyPAR</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,8 +22,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Needed to receive your current location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Needed to receive your current location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needed to receive your current location.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Needed to do stuff.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -51,13 +66,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needed to receive your current location.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Needed to receive your current location.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Needed to receive your current location.</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Needed to do stuff.</string>
 </dict>
 </plist>

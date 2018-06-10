@@ -9,13 +9,18 @@
 import UIKit
 import CoreLocation
 
-let bgImages = ["cafe", "night_club", "park", "restaurant", "shopping_mall", "establishment", "outdoors"]
+let baseURL = "http://37781dcf.ngrok.io/"
+
+let bgImages = ["cafe", "night_club", "pub", "park", "restaurant", "mall", "shopping_mall", "establishment", "outdoors"]
 
 class RecommendationsViewController: UIViewController {
 	
 	fileprivate var places = [Place]()
 	fileprivate let locationManager = CLLocationManager()
+	fileprivate var currentLocation = CLLocation(latitude: 12, longitude: 77)
 	fileprivate var loadedPOIs: Bool = false
+	
+	fileprivate var categories = ["cafe", "restaurant", "pub"] // Default
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -38,6 +43,21 @@ class RecommendationsViewController: UIViewController {
 		
 		if (places.count == 0) {
 			locationManager.startUpdatingLocation()
+		}
+
+		DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+			URLSession.shared.dataTask(with: URL(string: baseURL + "recommend")!) { (data, response, error) in
+				do {
+					if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
+						self.categories = json["data"] as! [String]
+						DispatchQueue.main.async {
+							self.collectionView.reloadData()
+						}
+					}
+				} catch _ {
+					
+				}
+			}.resume()
 		}
 		
     }
@@ -76,7 +96,7 @@ extension RecommendationsViewController: UITableViewDataSource {
 		let place = places[indexPath.row]
 		cell.titleLabel.text = place.placeName
 		cell.categoryLabel.text = place.infoText
-		cell.distanceLabel.text = String(format: "%.0f m", place.distanceFromUser)
+		cell.distanceLabel.text = String(format: "%.0f m", currentLocation.distance(from: place.location))
 		cell.tagsLabel.text = place.types
 		for image in bgImages {
 			if (place.types!.contains(image)) {
@@ -91,17 +111,20 @@ extension RecommendationsViewController: UITableViewDataSource {
 
 extension RecommendationsViewController: UITableViewDelegate {
 	
-	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return false
-	}
+//	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//		return false
+//	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 144
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// Do something...
-		// Open the AR view with information of the cell
+		tableView.deselectRow(at: indexPath, animated: false)
+		let place = places[indexPath.row]
+		if let tabBarVC = self.tabBarController as? TRTabBarController {
+			tabBarVC.setSinglePlace(place: place)
+		}
 	}
 	
 }
@@ -113,19 +136,14 @@ extension RecommendationsViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return max(min(3, places.count), 0)
+		return categories.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "headlineCell", for: indexPath) as! RecommendationCollectionViewCell
-		let place = places[indexPath.row]
-		cell.titleLabel.text = place.placeName
-		for image in bgImages {
-			if (place.types!.contains(image)) {
-				cell.imageView.image = UIImage(named: image)
-				break
-			}
-		}
+		let place = categories[indexPath.row]
+		cell.titleLabel.text = place.capitalized
+		cell.imageView.image = UIImage(named: place)
 		return cell
 	}
 	
@@ -158,6 +176,7 @@ extension RecommendationsViewController: CLLocationManagerDelegate {
 		if locations.count > 0 {
 			let location = locations.last!
 			if location.horizontalAccuracy < 100 {
+				currentLocation = location
 				manager.stopUpdatingLocation()
 				//				let span = MKCoordinateSpan(latitudeDelta: 0.014, longitudeDelta: 0.014)
 				//				let region = MKCoordinateRegion(center: location.coordinate, span: span)

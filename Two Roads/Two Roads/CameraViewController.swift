@@ -12,6 +12,8 @@ import HDAugmentedReality
 
 class CameraViewController: UIViewController {
 	
+	var singlePlace: Place?
+	
 	fileprivate var places = [Place]()
 	fileprivate let locationManager = CLLocationManager()
 	
@@ -30,24 +32,22 @@ class CameraViewController: UIViewController {
 		arController = ARViewController()
 		
 		arController.dataSource = self
-
 		
 		arController.trackingManager.userDistanceFilter = 25
 		arController.trackingManager.reloadDistanceFilter = 75
-		arController.trackingManager.pitchFilterFactor = 0.5
+
+		arController.trackingManager.pitchFilterFactor = 0.9
+		arController.trackingManager.headingFilterFactor = 0.9
+
 		
 		arController.presenter.maxDistance = 3000               // Don't show annotations if they are farther than this
 		arController.presenter.maxVisibleAnnotations = 30
-		arController.presenter.distanceOffsetMultiplier = 0.8
+		arController.presenter.distanceOffsetMultiplier = 0.01
 		arController.presenter.distanceOffsetMinThreshold = 500
 		arController.presenter.bottomBorder = 0.4
 		arController.presenter.presenterTransform = ARPresenterStackTransform.init()
 		
 		arController.uiOptions.closeButtonEnabled = false
-		
-		if (places.count == 0) {
-			locationManager.startUpdatingLocation()
-		}
 		
     }
 	
@@ -69,12 +69,20 @@ class CameraViewController: UIViewController {
 		if let tabBarController = self.tabBarController as? TRTabBarController {
 			tabBarController.selectTabAtIndex(index: 1)
 		}
+		
+		if let place = singlePlace {
+			self.arController.setAnnotations([place])
+		} else if (places.count == 0) {
+			locationManager.startUpdatingLocation()
+		}
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		arController.view.removeFromSuperview()
 		arController.removeFromParentViewController()
+		
+		singlePlace = nil
 	}
 	
 	func showInfoView(forPlace place: Place) {
@@ -96,6 +104,10 @@ class CameraViewController: UIViewController {
 	
 	@IBAction func centerAction(_ sender: Any) {
 		// Do something...
+		let places = arController.getAnnotations()
+		if let place = places[Int(arc4random_uniform(UInt32(places.count)))] as? Place {
+			showInfoView(forPlace: place)
+		}
 	}
 	
 	
@@ -174,10 +186,15 @@ extension CameraViewController: CLLocationManagerDelegate {
 
 extension CameraViewController: ARDataSource {
 	func ar(_ arViewController: ARViewController, viewForAnnotation: ARAnnotation) -> ARAnnotationView {
-		let annotationView = Bundle.main.loadNibNamed("AnnotationView", owner: nil, options: nil)?.first as! AnnotationView
+		var annotationView = Bundle.main.loadNibNamed("AnnotationView", owner: nil, options: nil)?.first as! AnnotationView
+		annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
+		if (singlePlace != nil) {
+			annotationView = Bundle.main.loadNibNamed("AnnotationLView", owner: nil, options: nil)?.first as! AnnotationView
+			annotationView.bigImage = true
+			annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 240)
+		}
 		annotationView.annotation = viewForAnnotation
 		annotationView.delegate = self
-		annotationView.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
 		
 		return annotationView
 	}

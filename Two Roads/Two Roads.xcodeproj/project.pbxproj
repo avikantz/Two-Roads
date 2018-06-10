@@ -25,6 +25,7 @@
 		5964035820CC575B00D2C674 /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964035620CC575B00D2C674 /* RecommendationCollectionViewCell.xib */; };
 		5964035B20CC65CA00D2C674 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964035920CC65CA00D2C674 /* CollectionHeaderView.swift */; };
 		5964035C20CC65CA00D2C674 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964035A20CC65CA00D2C674 /* CollectionHeaderView.xib */; };
+		5964035E20CCD3B200D2C674 /* AnnotationLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964035D20CCD1A500D2C674 /* AnnotationLView.xib */; };
 		5964B0B320CBCF4C00F4B370 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */; };
 		5964B0B520CBCF4C00F4B370 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B420CBCF4C00F4B370 /* art.scnassets */; };
 		5964B0BA20CBCF4C00F4B370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5964B0B820CBCF4C00F4B370 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		5964035620CC575B00D2C674 /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
 		5964035920CC65CA00D2C674 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		5964035A20CC65CA00D2C674 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		5964035D20CCD1A500D2C674 /* AnnotationLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationLView.xib; sourceTree = "<group>"; };
 		5964B0AF20CBCF4C00F4B370 /* Two Roads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Two Roads.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5964B0B220CBCF4C00F4B370 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5964B0B420CBCF4C00F4B370 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				5964034520CC009C00D2C674 /* PlacesLoader.swift */,
 				5964033F20CBFD5900D2C674 /* AnnotationView.swift */,
 				5964034120CBFD9A00D2C674 /* AnnotationView.xib */,
+				5964035D20CCD1A500D2C674 /* AnnotationLView.xib */,
 				5964B0BB20CBCF4D00F4B370 /* Assets.xcassets */,
 				5964B0BD20CBCF4D00F4B370 /* LaunchScreen.storyboard */,
 				5964B0C020CBCF4D00F4B370 /* Info.plist */,
@@ -331,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5964035E20CCD3B200D2C674 /* AnnotationLView.xib in Resources */,
 				5964B0B520CBCF4C00F4B370 /* art.scnassets in Resources */,
 				5964035C20CC65CA00D2C674 /* CollectionHeaderView.xib in Resources */,
 				5964034220CBFD9A00D2C674 /* AnnotationView.xib in Resources */,
